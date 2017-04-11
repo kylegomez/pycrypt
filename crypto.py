@@ -2,8 +2,15 @@
 import sys
 
 class Text:
-    def __init__(self, filename):
-        self.load(filename)
+    def __init__(self, filename = 0):
+        if filename:
+            self.load(filename)
+
+    def set(self, lst):
+        self.text = "".join(lst)
+
+    def get(self):
+        return self.text
 
     def load(self, filename):
         fp = open(filename, "r")
@@ -34,7 +41,5 @@ if __name__ == "__main__":
     else:
         print "Error"
         sys.exit(1)
-#    txt = Text('plaintext.txt')
-#    txt.load('plaintext.txt')
 
     print txt
